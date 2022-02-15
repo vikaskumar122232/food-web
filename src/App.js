@@ -4,7 +4,7 @@ import { BrowserRouter, Routes,Route, } from "react-router-dom";
 import Menu from './components/Menu';
 import ThankYou from './components/ThankYou';
 import Body from './components/Body';
-import PageNot from './components/PageNot';
+
 
 function App() {
  
@@ -16,11 +16,11 @@ function App() {
        
         
         <Routes>
+            
               <Route path='/menu' element={<Menu />} />
-        
               <Route path='/checkout' element={<ThankYou />} />
-        
-              <Route path='*' element={<PageNot />} />
+              
+              
         </Routes>
        
      </BrowserRouter>   

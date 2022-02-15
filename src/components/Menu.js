@@ -3,8 +3,9 @@ import AddIcon from '@mui/icons-material/Add';
 import { Button } from '@material-ui/core';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useState, useEffect } from 'react';
+import { Link,Route,Routes} from 'react-router-dom';
 import axios from 'axios';
-import { Navigate} from 'react-router-dom';
+import Oder from './Oder';
 function Menu() {
  
   const [recipe,setRecipe] = useState([])
@@ -18,6 +19,7 @@ function Menu() {
             console.log(err);
     })
   }, [])
+
   const recipeList = recipe.map((item) => {
        
     return     <div className="column">
@@ -25,10 +27,12 @@ function Menu() {
                          <img src={item.strMealThumb} alt=""/>
                           <h3>{ item.strMeal}</h3>
                           <p>Price:-{item.idMeal}</p>
-                          <div className="menu__btn">
-                                <Button >
+                            <div className="menu__btn">
+                                  <Link to="/oder"><Button >
+                               
                                    <AddIcon/>  
                                  </Button>
+                                 </Link>
                                  <Button>
                                    <RemoveIcon/>  
                                  </Button>
@@ -44,6 +48,9 @@ return (
     <div className="row">
     {recipeList}
     </div>
+    <Routes>
+    <Route path='/oder' element={<Oder />} />
+    </Routes>
     </div>
 
   )
