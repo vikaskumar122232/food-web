@@ -2,7 +2,6 @@
   "homepage": "http://vikaskumar122232.github.io/food-web",
   "name": "food-web",
   "version": "0.1.0",
-
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.1",

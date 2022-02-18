@@ -1,34 +1,21 @@
 import React from 'react'
 import Header from './components/Header';
-import { BrowserRouter, Routes,Route, } from "react-router-dom";
-import Menu from './components/Menu';
-import ThankYou from './components/ThankYou';
+import { Routes,Route,Link } from "react-router-dom";
 import Body from './components/Body';
-
-
+import Oder from './components/Oder';
+import PageNot from './components/PageNot';
+import ProductsList from './components/ProductsList';
 function App() {
- 
-  return (
-    <div>
-   <BrowserRouter>
+  return ( 
+      <div>  
         <Header />
-  <Body/>
-       
-        
         <Routes>
-            
-              <Route path='/menu' element={<Menu />} />
-              <Route path='/checkout' element={<ThankYou />} />
-              
-              
+          <Route path='/' element={<Body/>}/>
+          <Route path='/menu' element={<ProductsList />} />
+           <Route path ='*' element={<PageNot/>}/>
+          <Route path='/oder' element={<Oder />} />
         </Routes>
-       
-     </BrowserRouter>   
-     
-        
-    </div>
-  )
+      </div> 
+  );
 }
-
-
 export default App;
